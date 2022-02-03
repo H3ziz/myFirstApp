@@ -19,11 +19,11 @@ export class ProductsComponent implements OnInit {
 
   constructor() {
     this.Discount=  DiscountOffers['10%']
-    this.StoreName="Adidas";
-    this.StoreLogo="../../assets/adidas.png"
-    this.ProductList=[{ID:1, Name:'sneakers',Quantity:10,Price:100,Img:'img10',}];
-    this.CategoryList=[{ID:1,Name:"shoes"}];
-    this.ClientName= "Nada";
+    this.StoreName="Apple";
+    this.StoreLogo="../../assets/logo.png"
+    this.ProductList=[{ID:1, Name:'Iphone',Quantity:10,Price:100,Img:'img10',}];
+    this.CategoryList=[{ID:1,Name:"Mobile"},{ID:2, Name:"MobilePhone"}];
+    this.ClientName= "Judy";
     this.IsPurshased= true;
 
    }
@@ -31,4 +31,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onPurchase(){
+
+    this.IsPurshased = !this.IsPurshased
+  }
 }
