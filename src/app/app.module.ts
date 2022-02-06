@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
+import { ChildComponantComponent } from './child-componant/child-componant.component';
+import { ParentComponentComponent } from './parent-component/parent-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ProductsComponent
+    ProductsComponent,
+    ChildComponantComponent,
+    ParentComponentComponent
   ],
   imports: [
     BrowserModule,
