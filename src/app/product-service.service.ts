@@ -11,22 +11,22 @@ export class ProductServiceService {
     this.allProds=[
       {
         ID: 1,
-        Name:'Coffee',
-        Quantity :100,
-        Price : 30,
-        Img:'../../assets/images/coffee.jpg'
+        Name:'Iphone',
+        Quantity :50,
+        Price : 12000,
+        Img:'../../assets/ph1.png'
       },{
          ID:2,
-        Name:'Pepsi',
-        Quantity :200,
-        Price : 15,
-        Img:'../../assets/images/pepsi.jpg'
+        Name:'Saumsung',
+        Quantity :30,
+        Price : 7000,
+        Img:'../../assets/ph1.png'
       },{
         ID:3,
-        Name:'Tea',
+        Name:'Hauwei',
         Quantity :75,
-        Price : 10,
-        Img:'../../assets/images/tea.jpg'
+        Price : 10000,
+        Img:'../../assets/ph1.png'
       }
     ]
   }
