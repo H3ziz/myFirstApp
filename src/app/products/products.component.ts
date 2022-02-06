@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Icategory } from '../shared-classes-and-types/Icategory';
 import { IProduct } from '../shared-classes-and-types/Iproduct';
 import { DiscountOffers } from '../shared-classes-and-types/discount-offers';
+import { ProductServiceService } from '../product-service.service';
 
 @Component({
   selector: 'app-products',
@@ -16,6 +17,8 @@ export class ProductsComponent implements OnInit {
   CategoryList !: Icategory[];
   ClientName !: string;
   IsPurshased!: boolean;
+  allprods: any;
+  ProductService: ProductServiceService = new ProductServiceService;
 
   constructor() {
     this.Discount=  DiscountOffers['10%']
@@ -35,4 +38,10 @@ export class ProductsComponent implements OnInit {
 
     this.IsPurshased = !this.IsPurshased
   }
+  renderVals(){
+    this.allprods= this.ProductService.GetAllProducts()
+   }
+
 }
+
+
