@@ -11,6 +11,7 @@ export class ProductServiceService {
     this.allProds=[
       {
         ID: 1,
+<<<<<<< Updated upstream
         Name:'Coffee',
         Quantity :100,
         Price : 30,
@@ -27,6 +28,24 @@ export class ProductServiceService {
         Quantity :75,
         Price : 10,
         Img:'../../assets/images/tea.jpg'
+=======
+        Name:'Iphone',
+        Quantity :50,
+        Price : 12000,
+        Img:'../../assets/ph1.png'
+      },{
+         ID:2,
+        Name:'Saumsung',
+        Quantity :30,
+        Price : 7000,
+        Img:'../../assets/ph1.png'
+      },{
+        ID:3,
+        Name:'Hauwei',
+        Quantity :75,
+        Price : 10000,
+        Img:'../../assets/ph1.png'
+>>>>>>> Stashed changes
       }
     ]
   }
