@@ -14,7 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { PostsComponent } from './posts/posts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HttpClientModule } from'@angular/common/http'
+import { HttpClientModule } from'@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { WithDiscountComponent } from './with-discount/with-discount.component';
+import { WithoutDiscountComponent } from './without-discount/without-discount.component'
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { HttpClientModule } from'@angular/common/http'
     HomeComponent,
     UsersComponent,
     PostsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent,
+    WithDiscountComponent,
+    WithoutDiscountComponent
   ],
   imports: [
     BrowserModule,

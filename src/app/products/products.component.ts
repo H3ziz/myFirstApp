@@ -3,6 +3,8 @@ import { Icategory } from '../shared-classes-and-types/Icategory';
 import { IProduct } from '../shared-classes-and-types/Iproduct';
 import { DiscountOffers } from '../shared-classes-and-types/discount-offers';
 import { ProductServiceService } from '../product-service.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-products',
@@ -20,7 +22,7 @@ export class ProductsComponent implements OnInit {
   allprods: any;
   ProductService: ProductServiceService = new ProductServiceService;
 
-  constructor() {
+  constructor(private productService:ProductServiceService, private router:Router, private route:ActivatedRoute) {
     this.Discount=  DiscountOffers['10%']
     this.StoreName="Apple";
     this.StoreLogo="../../assets/logo.png"
@@ -41,7 +43,12 @@ export class ProductsComponent implements OnInit {
   renderVals(){
     this.allprods= this.ProductService.GetAllProducts()
    }
-
+   originalPrice(){
+    this.router.navigate(['without-discout'],{relativeTo:this.route});
+  }
+  discountedPrice(){
+    this.router.navigate(['with-discount'],{relativeTo:this.route});
+  }
 }
 
 

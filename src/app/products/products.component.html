@@ -52,3 +52,19 @@
 
 </div>
 
+<div class="container">
+  <h1>{{StoreName | uppercase}}</h1>
+  <img [src]='StoreLogo'>
+  <h3 *ngIf="Discount!='No Discount'">We offer an explicit discount of: {{Discount| percent}}</h3>
+  <!-- {{Discount | currency}} -->
+  <div class="dropdown my-2">
+    <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Product category
+    </a>
+
+    <button type="button" class="btn btn-success mx-2" (click)=" renderVals()">display data</button>
+    <button type="button" class="btn btn-success mx-2" (click)=" originalPrice()">Show products with original
+      price</button>
+    <button type="button" class="btn btn-success mx-2" (click)=" discountedPrice()">Show products price after
+      discount</button>
