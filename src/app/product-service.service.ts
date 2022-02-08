@@ -51,7 +51,7 @@ export class ProductServiceService {
       return "the Product you want is not exist "
     }
   
-exports = {ProductServiceService}
+// exports = {ProductServiceService}
    }
 
 }

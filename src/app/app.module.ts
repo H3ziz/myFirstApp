@@ -9,6 +9,13 @@ import { ProductsComponent } from './products/products.component';
 import { FormsModule } from '@angular/forms';
 import { ChildComponantComponent } from './child-componant/child-componant.component';
 import { ParentComponentComponent } from './parent-component/parent-component.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from'@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -17,12 +24,20 @@ import { ParentComponentComponent } from './parent-component/parent-component.co
     FooterComponent,
     ProductsComponent,
     ChildComponantComponent,
-    ParentComponentComponent
+    ParentComponentComponent,
+    RegisterComponent,
+    HomeComponent,
+    UsersComponent,
+    PostsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
