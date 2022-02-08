@@ -1,25 +1,41 @@
-<form class="container">
+<form class="container" #registerForm="ngForm" (ngSubmit)="onRegister()">
     <div class="mb-3">
       <label for="Email" class="form-label">Username</label>
-      <input type="username" class="form-control" id="Email">
+      <input type="username" class="form-control" id="Email"required name="username" #name="ngModel"
+      [(ngModel)]="registerInfo.name" pattern="^[A-Za-z]{3,20}$" >
+      <p class="text-red" *ngIf="name.errors?.['required'] && name.touched">name is required</p>
+      <p class="text-red" *ngIf="name.errors?.['pattern'] && name.touched">name contains only upper and lower characters</p>
     </div>
+
     <div class="mb-3">
       <label for="Email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      required [(ngModel)]="registerInfo.email" #email="ngModel">
+      <p class="text-red" *ngIf="email.errors?.['required'] && email.touched">email is required</p>
+      <p class="text-red" *ngIf="email.errors?.['pattern'] && email.touched">email address is-invalid</p>
     </div>
     <div class="mb-3">
       <label for="Password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="Password">
+      <input type="password" class="form-control" id="Password"  required [(ngModel)]="registerInfo.password" #password="ngModel">
     </div>
+
     <div class="mb-3">
       <label for="Password" class="form-label">Confirm Password</label>
-      <input type="password" class="form-control" id="Password">
+      <input type="password" class="form-control" id="Password" required [(ngModel)]="registerInfo.confirmPassword" #confirmpassword="ngModel">
+      <p class="text-red" *ngIf="confirmpassword.errors?.['required'] && confirmpassword.touched">Confirm your Password, please!</p>
+
+    
     </div>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" #hearAboutUs="ngModel" [(ngModel)]="registerInfo.hearAboutUs" name="hearAboutUs" required> 
       <option selected disabled>Where did you hear about us?</option>
       <option value="1">Twitter</option>
       <option value="2">Facebook</option>
       <option value="3">Google</option>
     </select>
-    <button type="submit" class="btn btn-danger">Register</button>
+    <p class="text-red" *ngIf="hearAboutUs.errors?.['required'] && hearAboutUs.touched"> Tell us where did you hear about us,Please?</p>
+
+    <button type="submit" class="btn btn-danger" [disabled]="registerForm.invalid || (password.value  != confirmpassword.value)">Register</button>
   </form>
+
+
+  {{registerForm.value | json}} 
