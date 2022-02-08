@@ -1,12 +1,21 @@
-<form class="container">
+<form class="container" #loginForm="ngForm" (ngSubmit)="login()">
     <div class="mb-3">
       <label for="Email" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">your email'll never be shared with anyone else.</div>
+      <input type="email" class="form-control" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      class="form-control" required [class.is-invalid]="email.invalid && email.touched" id="exampleInputEmail1"
+      required [(ngModel)]="credentials.email" #email="ngModel" id="Email" aria-describedby="emailHelp">
+      <p class="text-red" *ngIf="email.errors?.['required'] && email.touched">email is required</p>
+      <p class="text-red" *ngIf="email.errors?.['pattern'] && email.touched">Enter valid email address</p>
     </div>
     <div class="mb-3">
       <label for="Password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="Password">
+      <input type="password" class="form-control" id="Password"  [class.is-invalid]="password.invalid && password.touched" name="password" required [(ngModel)]="credentials.password"
+      #password="ngModel">
+      <p class="text-red" *ngIf="password.errors?.['required'] && password.touched">Password is required</p>
+
     </div>
-    <button type="submit" class="btn btn-danger">Login</button>
+    <button type="submit" class="btn btn-danger" [disabled]="loginForm.invalid" [class.btn-success]="loginForm.valid"
+    [class.btn-danger]="loginForm.invalid">Login</button>
+    <p *ngIf="responseMsg">welcome {{responseMsg}}</p>
+
   </form>
