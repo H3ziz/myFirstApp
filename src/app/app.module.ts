@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponantComponent } from './child-componant/child-componant.component';
 import { ParentComponentComponent } from './parent-component/parent-component.component';
 import { RegisterComponent } from './register/register.component';
@@ -17,7 +16,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from'@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { WithDiscountComponent } from './with-discount/with-discount.component';
-import { WithoutDiscountComponent } from './without-discount/without-discount.component'
+import { WithoutDiscountComponent } from './without-discount/without-discount.component';
+import { NotesComponent } from './notes/notes.component'
 
 
 @NgModule({
@@ -35,13 +35,15 @@ import { WithoutDiscountComponent } from './without-discount/without-discount.co
     PageNotFoundComponent,
     LoginComponent,
     WithDiscountComponent,
-    WithoutDiscountComponent
+    WithoutDiscountComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
     
   ],

@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NotesComponent } from './notes/notes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostsComponent } from './posts/posts.component';
 import { ProductsComponent } from './products/products.component';
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path:'without-discout',component:WithoutDiscountComponent}]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
+  {path:'notes', component:NotesComponent},
   {path:"**",component:PageNotFoundComponent}
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
